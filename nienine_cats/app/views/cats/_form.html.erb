@@ -1,0 +1,36 @@
+<form action="<%= cats_url %>" method="post">
+
+  <label for="name">Name
+  
+    <input type="text" name="cat[name]">
+
+  </label>
+
+  <label for="color">Color</label>
+    <select id="color" name="cat[color]">
+        <% Cat::COLORS.each do |color| %>
+            <option value="<%= color %>">
+                <%= color %>
+            </option>
+        <% end %>
+    </select>
+
+  <label for="birth_date">Birth Date
+    <!--<%#= date_select("cat[birth_date]", "cat") %>-->
+    <input type="date" name="cat[birth_date]" min="1995-01-01" max="<%= Date.today.to_s %>">
+
+  </label>
+
+  <% Cat::SEX.each do |sex| %>
+  <label>
+    <input type="radio" name="cat[sex]" value="<%= sex %>">
+    <%= sex %>
+  </label>
+  <% end %>
+
+  <label for="description">description
+    <textarea name="cat[description]">Tell us about your Cat</textarea>
+  </label>
+  
+  <input type="submit" value="Generate Cat">
+</form>
