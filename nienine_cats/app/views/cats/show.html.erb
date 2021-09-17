@@ -1,2 +1,7 @@
-<h1>Cat#show</h1>
-<p>Find me in app/views/cat/show.html.erb</p>
+<h1><%= @cat.name %></h1>
+<h5><%= @cat.color %></h5>
+<h5><%= @cat.sex %></h5>
+<h5><%= @cat.birth_date %></h5>
+<p><%= @cat.description %></p>
+<a href="<%= cats_url %>">Back to all Cats</a>
+
