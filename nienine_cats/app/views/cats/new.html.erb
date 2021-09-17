@@ -1,0 +1,29 @@
+<form action="<%= cats_url %>" method="post">
+
+  <label for="name">Name
+  
+    <input type="text" name="cat[name]">
+
+  </label>
+
+  <label for="color">Color
+  
+    <input type="text" name="cat[color]">
+
+  </label>
+
+  <label for="birth_date">Birth Date
+  
+    <input type="text" name="cat[birth_date]">
+
+  </label>
+
+  <% Cat::SEX.each do |sex| %>
+  <label>
+    <input type="radio" name="cat[sex]" value="<%= sex %>">
+    <%= sex %>
+  </label>
+  <% end %>
+  
+
+</form>
